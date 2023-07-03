@@ -24,7 +24,6 @@ namespace GitMergeTest
             ruler.Run();
         }
     }
-
     public class Ruler
     {
         private const float ONE_INCH = 2.54F;
@@ -32,7 +31,9 @@ namespace GitMergeTest
         public float Inch
         {
             get { return Centimeter * ONE_INCH; }
-            private set { Centimeter = (int)(value / ONE_INCH); }
+
+            //{2023. 07. 03.        Add private _SetInch function / Gamma
+            private set { this._setInch(value); }
         }
 
         public Ruler(int cmValue) { Centimeter = cmValue; }
@@ -40,7 +41,13 @@ namespace GitMergeTest
         {
             Console.WriteLine($"{this.Centimeter}cm는 {this.Inch}inch 입니다.");
         }
+        private void _setInch(float inchValue) {  Centimeter = (int)(inchValue / ONE_INCH); }
+        //{2023. 07. 03.        Add private _SetInch function / Gamma
     }
+<<<<<<< HEAD
     
    
+=======
+
+>>>>>>> origin/main
 }
