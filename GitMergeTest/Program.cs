@@ -6,24 +6,6 @@ using System.Threading.Tasks;
 
 namespace GitMergeTest
 {
-    //바꿈 3
-    public class Ruler
-    {
-        private const float ONE_INCH = 2.54F;
-        public int Centimeter { get; set; } = 0;
-        public float Inch
-        {
-            get { return Centimeter * ONE_INCH; }
-            private set { Centimeter = (int)(value / ONE_INCH); }
-        }
-
-        public Ruler(int cmValue) { Centimeter = cmValue; }
-        public void Run()
-        {
-            Console.WriteLine($"{this.Centimeter}cm는 {this.Inch}inch 입니다.");
-        }
-    }
-    //바꿈 3
     public class Program
     {
         static void Main(string[] args)
@@ -31,6 +13,26 @@ namespace GitMergeTest
             Ruler ruler = new Ruler(10);
             ruler.Run();
         }
+    }
+    public class Ruler
+    {
+        private const float ONE_INCH = 2.54F;
+        public int Centimeter { get; set; } = 0;
+        public float Inch
+        {
+            get { return Centimeter * ONE_INCH; }
+
+            //{2023. 07. 03.        Add private _SetInch function / Gamma
+            private set { this._setInch(value); }
+        }
+
+        public Ruler(int cmValue) { Centimeter = cmValue; }
+        public void Run()
+        {
+            Console.WriteLine($"{this.Centimeter}cm는 {this.Inch}inch 입니다.");
+        }
+        private void _setInch(float inchValue) {  Centimeter = (int)(inchValue / ONE_INCH); }
+        //{2023. 07. 03.        Add private _SetInch function / Gamma
     }
 
 }
