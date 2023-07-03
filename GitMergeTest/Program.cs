@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GitMergeTest
 {
+<<<<<<< HEAD
     public class Program
     {
         static void Main(string[] args)
@@ -14,6 +15,9 @@ namespace GitMergeTest
             ruler.Run();
         }
     }
+=======
+    //바꿈
+>>>>>>> Alpha
     public class Ruler
     {
         private const float ONE_INCH = 2.54F;
@@ -34,5 +38,17 @@ namespace GitMergeTest
         private void _setInch(float inchValue) {  Centimeter = (int)(inchValue / ONE_INCH); }
         //{2023. 07. 03.        Add private _SetInch function / Gamma
     }
+<<<<<<< HEAD
+=======
+    //바꿈
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Ruler ruler = new Ruler(10);
+            ruler.Run();
+        }
+    }
+>>>>>>> Alpha
 
 }
