@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace GitMergeTest
 {
-    //바꿈2
+    public class Program
+    {
+        // {    2023. 07. 03. Add user input / Beta
+        static void Main(string[] args)
+        {
+
+            string userInput = string.Empty;
+            Console.WriteLine("This program convert Cmto Inch");
+            Console.WriteLine("Input Cm value : "); ;
+            userInput = Console.ReadLine();
+
+            int cmInput = 0;
+            int.TryParse(userInput, out cmInput);
+                Ruler ruler = new Ruler(10);
+        // }    2023. 07. 03. Add user input / Beta
+            ruler.Run();
+        }
+    }
+
     public class Ruler
     {
         private const float ONE_INCH = 2.54F;
@@ -23,14 +41,6 @@ namespace GitMergeTest
             Console.WriteLine($"{this.Centimeter}cm는 {this.Inch}inch 입니다.");
         }
     }
-    //바꿈2
-    public class Program
-    {
-        static void Main(string[] args)
-        {
-            Ruler ruler = new Ruler(10);
-            ruler.Run();
-        }
-    }
-
+    
+   
 }
